@@ -1,0 +1,46 @@
+.menu {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+a {
+    color: #fff;
+    width: auto;
+    margin: 0px 10px;
+    font-size: 20px;
+    display: flex;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    line-height: 20px;
+}
+ 
+a:hover {
+    color: #fffc;
+}
+
+span {
+    padding-left: 1px;
+}
+#dropdown-basic {
+    display: none;
+}
+
+@media only screen and (max-width: 500px) {
+    #dropdown-basic {
+        display: block;
+        background: transparent;
+        font-size: 20px;
+        text-align: left;
+        height: 37px;
+    }
+    .dropdown-item {
+         width: 88%;
+    }
+    .menu {
+        display: none;
+    }
+    .header {
+        height: 38px;
+    }
+}

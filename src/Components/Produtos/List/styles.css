@@ -1,0 +1,52 @@
+.list-usuarios {
+    margin: 30px auto 20px;
+}
+.item-list-usuarios {
+    margin-bottom: 5px;
+}
+
+.item-list-produtos {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+}
+.item-list-produtos .item-name{
+    width: 50%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0;
+    overflow: hidden;
+}
+.item-list-produtos .item-valor{
+    flex-grow: 3;
+    text-align: center;
+}
+.item-list-produtos .item-delete,
+.item-list-produtos .item-edit{
+    flex-grow: 1;
+    text-align: right;
+}
+.item-list-produtos .item-delete *,
+.item-list-produtos .item-edit *{
+    cursor: pointer;
+}
+
+.close 
+{
+    width: 10%;
+}
+.modal-footer 
+{
+    flex-wrap: inherit;
+}
+.id-produto
+{
+    color: #bd2130;
+}
+p
+{
+    font-size: 16px;
+}
+strong {
+    color: #006D77;
+}

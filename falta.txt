@@ -1,0 +1,13 @@
+logo
+logout
+
+responsividade
+
+users 
+1 admin
+2 vendedor
+3 cliente
+
+
+listagem / edição / criação - produtos
+listagem / edição / criação - usuarios
