@@ -97,7 +97,7 @@ export default function List(props) {
     
 
     const itens = listagem.map((item) =>
-        <ListGroup.Item key={item.idUsuario} className="item-list-produtos">
+        <ListGroup.Item key={item.id} className="item-list-produtos">
             <span className="item-name"> {item.nome}  </span>
             <span className="item-name"> {item.email} </span>
             <span className="item-edit"><FiEdit onClick={() => EditarCliente(item)} /></span>

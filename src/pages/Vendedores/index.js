@@ -5,7 +5,7 @@ import Lists from '../../services/serviceList';
 
 import Modal from '../../Components/Vendedores/Criar';
 import List from '../../Components/Vendedores/List';
-import Header from '../../Components/Admin/Header';
+import Header from '../../Components/Header/Header';
 
 import './styles.css'; 
 
