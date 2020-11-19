@@ -17,9 +17,8 @@ export default function List(props) {
     const [id, setId] = useState();
     const [nome, setNome] = useState();
     const [email, setEmail] = useState();
-    const [cidade, setCidade] = useState();
-    const [uf, setUf] = useState();
-
+    const [cpf, setCpf] = useState();
+    const [tipo, setTipo] = useState();
 
     // loader
     const [loader, setLoader] = useState(false);
@@ -34,19 +33,20 @@ export default function List(props) {
      const handleAlterClose = () => setShowAlter(false);
      const handleAlterShow = () => setShowAlter(true);
     
-    const [listagem, setListagem] = useState(props.listVendedores);
+    const [listagem, setListagem] = useState(props.listColaboradores);
 
-    function DeletarVendedor(id){
+    function Deletarcolaborador(id){
         setId(id);
         handleDeleteShow();
     }  
 
-    function EditarVendedor(item){
+    function Editarcolaborador(item){
         setId(item.id);
         setNome(item.nome);
         setEmail(item.email);
-        setCidade(item.cidade);
-        setUf(item.uf);
+        setCpf(item.Cpf);
+        setCpf(item.cpf);
+        setTipo(item.tipo );
         handleAlterShow();
     }
 
@@ -58,10 +58,10 @@ export default function List(props) {
                 id,
                 nome,
                 email,
-                cidade,
-                uf,
+                cpf,
+                tipo
             }        
-            const response = await Edition('/Vendedor', data);
+            const response = await Edition('/colaborador', data);
             if (response) {
                 alert('Dados Alterados com sucesso');
                 setLoader(false);
@@ -82,7 +82,7 @@ export default function List(props) {
     async function handleDeleteRegister() {
         setLoader(true);
         try {
-          const response = await Delete('/Vendedor/', id);    
+          const response = await Delete('/colaborador/', id);    
           if (response) {
                 alert('Registros excluídos com sucesso');
                 setLoader(false); 
@@ -100,11 +100,11 @@ export default function List(props) {
     }
 
     const itens = listagem.map((item) =>
-        <ListGroup.Item key={item.id} className="item-list-vendedores">
+        <ListGroup.Item key={item.id} className="item-list-colaboradores">
             <span className="item-name"> {item.nome}  </span>
             <span className="item-name"> {item.email} </span>
-            <span className="item-edit"><FiEdit onClick={() => EditarVendedor(item)} /></span>
-            <span className="item-delete"><FiXCircle onClick={() => DeletarVendedor(item.id)} /></span>
+            <span className="item-edit"><FiEdit onClick={() => Editarcolaborador(item)} /></span>
+            <span className="item-delete"><FiXCircle onClick={() => Deletarcolaborador(item.id)} /></span>
         </ListGroup.Item>
     );
 
@@ -122,7 +122,7 @@ export default function List(props) {
             />
             <Row className="justify-content-md-center">
                 <Col md={10}>
-                    <ListGroup variant="flush" className="list-vendedores">
+                    <ListGroup variant="flush" className="list-colaboradores">
                         {itens}
                     </ListGroup>
                 </Col>
@@ -137,7 +137,7 @@ export default function List(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <p>
-                        Você tem certeza que gostaria de excluir esse Vendedor?
+                        Você tem certeza que gostaria de excluir esse colaborador?
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
@@ -153,8 +153,7 @@ export default function List(props) {
             aria-labelledby="contained-modal-title-vcenter">
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Editar Cliente <strong>{nome
-                    }</strong>
+                    Editar Cliente <strong>{nome}</strong>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -176,22 +175,23 @@ export default function List(props) {
                             placeholder="Email" />
                     </Form.Group>
                     <Form.Group controlId="formGroupQuantidade">
-                        <Form.Label>Cidade</Form.Label>
+                        <Form.Label>Cpf</Form.Label>
                         <Form.Control
-                            type="Cidade"
-                            value={cidade}
-                            onChange={e => setCidade(e.target.value)}
-                            placeholder="Cidade" />
+                            type="Cpf"
+                            value={cpf}
+                            disabled={true}
+                            onChange={e => setCpf(e.target.value)}
+                            placeholder="Cpf" />
                     </Form.Group>
                     <Form.Group controlId="formGroupQuantidade">
-                        <Form.Label>Uf</Form.Label>
+                        <Form.Label>tipo</Form.Label>
                         <Form.Control
-                            type="Uf"
-                            value={uf}
-                            onChange={e => setUf(e.target.value)}
-                            placeholder="Uf" />
+                            type="tipo"
+                            value={tipo}
+                            onChange={e => setTipo(e.target.value)}
+                            placeholder="tipo" />
                     </Form.Group>
-                    <Button type="submit">Salvar</Button>
+                    <Button type="submit" className="btn-salvar">Salvar</Button>
                 </Form>
             </Modal.Body>
         </Modal>}

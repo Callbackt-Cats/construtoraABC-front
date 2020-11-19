@@ -12,10 +12,9 @@ import Delete from '../../../services/serviceDelete';
 export default function List(props) {
 
     // Propriedades clientes
-    const [idUsuario, setId] = useState();
+    const [id, setId] = useState();
     const [nome, setNome] = useState();
     const [email, setEmail] = useState();
-    const [cidadeUsuario, setCidade] = useState();
     const [cpf, setcpf] = useState();
 
     // Modal de Excluir
@@ -42,7 +41,6 @@ export default function List(props) {
         setId(item.id);
         setNome(item.nome);
         setEmail(item.email);
-        setCidade(item.cidade);
         setcpf(item.cpf);
         handleAlterShow();
     }
@@ -50,7 +48,7 @@ export default function List(props) {
     async function handleDeleteRegister() {
         setLoader(true);
         try {
-          const response = await Delete('/Usuario/', idUsuario);    
+          const response = await Delete('/Clientes/', id);    
           if (response) {
                 alert('Registros excluídos com sucesso');
                 setLoader(false); 
@@ -72,13 +70,12 @@ export default function List(props) {
         setLoader(true);
         try {
             const data = {
-                idUsuario,
+                id,
                 nome,
                 email,
-                cidadeUsuario,
                 cpf,
             }        
-            const response = await Edition('/Usuario', data);
+            const response = await Edition('/Clientes', data);
             if (response) {
                 alert('Dados Alterados com sucesso');
                 setLoader(false);
@@ -101,7 +98,7 @@ export default function List(props) {
             <span className="item-name"> {item.nome}  </span>
             <span className="item-name"> {item.email} </span>
             <span className="item-edit"><FiEdit onClick={() => EditarCliente(item)} /></span>
-            <span className="item-delete"><FiXCircle onClick={() => ExcluirCliente(item.idUsuario)} /></span>
+            <span className="item-delete"><FiXCircle onClick={() => ExcluirCliente(item.id)} /></span>
         </ListGroup.Item>
     );
 
@@ -117,7 +114,7 @@ export default function List(props) {
             />
             <Row className="justify-content-md-center">
                 <Col md={10}>
-                    <ListGroup variant="flush" className="list-usuarios">
+                    <ListGroup variant="flush" className="list-clientes">
                         {itens}
                     </ListGroup>
                 </Col>
@@ -128,7 +125,7 @@ export default function List(props) {
                 centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Remover cliente  <strong className="id-produto">{idUsuario}</strong>
+                        Remover cliente  <strong className="id-produto">{id}</strong>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -178,7 +175,7 @@ export default function List(props) {
                             onChange={e => setcpf(e.target.value)}
                             placeholder="cpf" />
                     </Form.Group>
-                    <Button type="submit">Salvar</Button>
+                    <Button type="submit" className="btn-salvar">Salvar</Button>
                 </Form>
             </Modal.Body>
         </Modal>}

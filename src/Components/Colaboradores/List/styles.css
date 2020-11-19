@@ -1,21 +1,25 @@
-.list-vendedores {
+.list-colaboradores {
     margin: 30px auto 20px;
 }
-.item-list-vendedores {
+.item-list-colaboradores {
     display: flex;
     flex-direction: row;
     flex-grow: 2;
 }
-.item-list-vendedores .item-name{
+.item-list-colaboradores .item-name{
     width: 45%;
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 0;
     overflow: hidden;
 }
-.item-list-vendedores .item-delete,
-.item-list-vendedores .item-edit{
+.item-list-colaboradores .item-delete,
+.item-list-colaboradores .item-edit{
     flex-grow: 1;
     cursor: pointer;
     text-align: right;
+}
+
+.btn-salvar {
+    width: 100%;
 }

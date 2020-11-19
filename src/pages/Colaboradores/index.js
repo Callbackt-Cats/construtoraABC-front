@@ -3,32 +3,32 @@ import { Container, Col, Row } from 'react-bootstrap';
 
 import Lists from '../../services/serviceList';
 
-import Modal from '../../Components/Vendedores/Criar';
-import List from '../../Components/Vendedores/List';
+import Modal from '../../Components/Colaboradores/Criar';
+import List from '../../Components/Colaboradores/List';
 import Header from '../../Components/Header/Header';
 
 import './styles.css'; 
 
-export default function Vendedores() {
+export default function Colaboradores() {
 
-    const [listVendedores, setListVendedores] = useState([]);
+    const [listColaboradores, setListColaboradores] = useState([]);
 
-    async function GetListVendedores() {
-        const response = await Lists('vendedor');
-        setListVendedores(response.data)
+    async function GetListColaboradores() {
+        const response = await Lists('Colaboradores');
+        setListColaboradores(response.data)
     }
 
     useEffect(() => {
-        GetListVendedores();
+        GetListColaboradores();
     }, []);
 
     return (
-        <div className="usuarios-container">
+        <div className="colaboradores-container">
             <Header />
             <Container>
-                <h1>Vendedores</h1>
-                {listVendedores.length > 0 && (
-                    <List listVendedores={listVendedores} />
+                <h1>Colaboradores</h1>
+                {listColaboradores.length > 0 && (
+                    <List listColaboradores={listColaboradores} />
                 )}
                 <Row className="justify-content-md-center">
                     <Col md={10}>                       

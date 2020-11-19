@@ -1,7 +1,7 @@
-.list-usuarios {
+.list-clientes {
     margin: 30px auto 20px;
 }
-.item-list-usuarios {
+.item-list-clientes {
     margin-bottom: 5px;
 }
 
@@ -26,4 +26,8 @@
     flex-grow: 1;
     cursor: pointer;
     text-align: right;
+}
+
+.btn-salvar {
+    width: 100%;
 }
