@@ -1,0 +1,25 @@
+.list-Imoveis {
+    margin: 30px auto 20px;
+}
+.item-list-Imoveis {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+}
+.item-list-Imoveis .item-name{
+    width: 45%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0;
+    overflow: hidden;
+}
+.item-list-Imoveis .item-delete,
+.item-list-Imoveis .item-edit{
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: right;
+}
+
+.btn-salvar {
+    width: 100%;
+}
