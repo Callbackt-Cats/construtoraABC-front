@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Colaboradores from "./pages/Colaboradores";
+import Materiais from "./pages/Materiais";
 import Clientes from "./pages/Clientes";
 import Obras from "./pages/Obras";
 import Imoveis from "./pages/Imoveis";
@@ -15,6 +16,7 @@ export default function Routes() {
                 <Route exact path="/clientes" component={Clientes} />
                 <Route exact path="/obras" component={Obras} />
                 <Route exact path="/imoveis" component={Imoveis} />
+                <Route exact path="/materiais" component={Materiais} />
 
             </Switch>
         </BrowserRouter>
