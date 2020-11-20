@@ -14,8 +14,8 @@ export default function ModalInsert(props) {
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
-    const [cidade, setCidade] = useState('')
-    const [uf, setUf] = useState('')
+    const [cpf, setCpf] = useState('')
+    const [tipo, setTipo] = useState('')
 
     async function handleRegister(e) {
         e.preventDefault();
@@ -23,10 +23,10 @@ export default function ModalInsert(props) {
         const data = {
             nome,
             email,
-            cidade,
-            uf
+            cpf,
+            tipo
         }
-        const response = await insert('/vendedor', data);
+        const response = await insert('/Colaboradores', data);
         if (response) {
             handleClose()
         }else{
@@ -48,7 +48,7 @@ export default function ModalInsert(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Cadastrar novo vendedor
+                    Cadastrar novo Colaborador
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -67,21 +67,21 @@ export default function ModalInsert(props) {
                             onChange={e => setEmail(e.target.value)}
                             placeholder="E-mail" />
                     </Form.Group>
-                    <Form.Group controlId="formGroupCidade">
-                        <Form.Label>Cidade</Form.Label>
+                    <Form.Group controlId="formGroupCpf">
+                        <Form.Label>Cpf</Form.Label>
                         <Form.Control
-                            type="Cidade"
-                            onChange={e => setCidade(e.target.value)}
-                            placeholder="Cidade" />
+                            type="Cpf"
+                            onChange={e => setCpf(e.target.value)}
+                            placeholder="Cpf" />
                     </Form.Group>
-                    <Form.Group controlId="formGroupCidade">
-                        <Form.Label>Uf</Form.Label>
+                    <Form.Group controlId="formGroupCpf">
+                        <Form.Label>Tipo</Form.Label>
                         <Form.Control
-                            type="Uf"
-                            onChange={e => setUf(e.target.value)}
-                            placeholder="Uf" />
-                    </Form.Group>
-                    <Button type="submit">Sa    lvar</Button>
+                            type="Tipo"
+                            onChange={e => setTipo(e.target.value)}
+                            placeholder="Tipo" />
+                    </Form.Group>               
+                    <Button type="submit" className="btn-salvar">Salvar</Button>
                 </Form>
             </Modal.Body>
         </Modal>

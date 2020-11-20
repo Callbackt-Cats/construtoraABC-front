@@ -44,9 +44,8 @@ export default function List(props) {
         setId(item.id);
         setNome(item.nome);
         setEmail(item.email);
-        setCpf(item.Cpf);
         setCpf(item.cpf);
-        setTipo(item.tipo );
+        setTipo(item.tipo);
         handleAlterShow();
     }
 
@@ -61,7 +60,7 @@ export default function List(props) {
                 cpf,
                 tipo
             }        
-            const response = await Edition('/colaborador', data);
+            const response = await Edition('/Colaboradores', data);
             if (response) {
                 alert('Dados Alterados com sucesso');
                 setLoader(false);
@@ -82,7 +81,7 @@ export default function List(props) {
     async function handleDeleteRegister() {
         setLoader(true);
         try {
-          const response = await Delete('/colaborador/', id);    
+          const response = await Delete('/Colaboradores/', id);    
           if (response) {
                 alert('Registros excluídos com sucesso');
                 setLoader(false); 
@@ -182,15 +181,15 @@ export default function List(props) {
                             disabled={true}
                             onChange={e => setCpf(e.target.value)}
                             placeholder="Cpf" />
-                    </Form.Group>
-                    <Form.Group controlId="formGroupQuantidade">
-                        <Form.Label>tipo</Form.Label>
+                    </Form.Group> 
+                    <Form.Group controlId="formGroupCpf">
+                        <Form.Label>Tipo</Form.Label>
                         <Form.Control
-                            type="tipo"
+                            type="Tipo"
                             value={tipo}
                             onChange={e => setTipo(e.target.value)}
-                            placeholder="tipo" />
-                    </Form.Group>
+                            placeholder="Tipo" />
+                    </Form.Group>         
                     <Button type="submit" className="btn-salvar">Salvar</Button>
                 </Form>
             </Modal.Body>

@@ -68,7 +68,6 @@ export default function ModalInsert(props) {
                             <Form.Label>Cpf</Form.Label>
                             <Form.Control
                                 type="cpf"
-                                disabled={true}
                                 onChange={e => setcpf(e.target.value)}
                                 placeholder="cpf" />
                         </Form.Group>
