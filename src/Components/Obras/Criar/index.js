@@ -12,21 +12,28 @@ export default function ModalInsert(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const [nome, setNome] = useState('')
-    const [email, setEmail] = useState('')
-    const [cpf, setCpf] = useState('')
-    const [tipo, setTipo] = useState('')
+      // Propriedades obras
+      const [codigo, setCodigo] = useState();
+      const [endereco, setEndereco] = useState();
+      const [localizacao, setLocalizacao] = useState();
+      const [descricao, setDescricao] = useState();
+      const [valor, setValor] = useState();
+      const [idImovel, setIdImovel] = useState();
+      const [idEngenheiro, setIdEngenheiro] = useState();
 
     async function handleRegister(e) {
         e.preventDefault();
 
         const data = {
-            nome,
-            email,
-            cpf,
-            tipo
+            codigo,
+            endereco,
+            localizacao,
+            descricao,
+            valor,
+            idImovel,
+            idEngenheiro
         }
-        const response = await insert('/Colaboradores', data);
+        const response = await insert('/Obras', data);
         if (response) {
             handleClose()
         }else{
@@ -52,35 +59,49 @@ export default function ModalInsert(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form onSubmit={handleRegister}>
-                    <Form.Group controlId="formGroupNome">
-                        <Form.Label>Nome</Form.Label>
+            <Form onSubmit={handleRegister}>
+                    <Form.Group controlId="formGroupEndereco">
+                        <Form.Label>Endereço</Form.Label>
                         <Form.Control
-                            type="Nome"
-                            onChange={e => setNome(e.target.value)}
-                            placeholder="Nome" />
+                            type="endereco"
+                            onChange={e => setEndereco(e.target.value)}
+                            placeholder="Endereço" />
                     </Form.Group>
-                    <Form.Group controlId="formGroupEmail">
-                        <Form.Label>E-mail</Form.Label>
+                    <Form.Group controlId="formGroupLocalizacao">
+                        <Form.Label>Localização</Form.Label>
                         <Form.Control
-                            type="Email"
-                            onChange={e => setEmail(e.target.value)}
-                            placeholder="E-mail" />
+                            type="localizacao"
+                            onChange={e => setLocalizacao(e.target.value)}
+                            placeholder="Localização" />
                     </Form.Group>
+                    <Form.Group controlId="formGroupDescricao">
+                        <Form.Label>Descrição</Form.Label>
+                        <Form.Control
+                            type="descricao"
+                            onChange={e => setDescricao(e.target.value)}
+                            placeholder="Descrição" />
+                    </Form.Group> 
                     <Form.Group controlId="formGroupCpf">
-                        <Form.Label>Cpf</Form.Label>
+                        <Form.Label>Valor</Form.Label>
                         <Form.Control
-                            type="Cpf"
-                            onChange={e => setCpf(e.target.value)}
-                            placeholder="Cpf" />
+                            type="valor"
+                            onChange={e => setValor(e.target.value)}
+                            placeholder="Valor" />
                     </Form.Group>
-                    <Form.Group controlId="formGroupCpf">
-                        <Form.Label>Tipo</Form.Label>
+                    <Form.Group controlId="formGroupIdImovel">
+                        <Form.Label>Id Imóvel</Form.Label>
                         <Form.Control
-                            type="Tipo"
-                            onChange={e => setTipo(e.target.value)}
-                            placeholder="Tipo" />
-                    </Form.Group>               
+                            type="IdImovel"
+                            onChange={e => setIdImovel(e.target.value)}
+                            placeholder="Id Imóvel" />
+                    </Form.Group>   
+                    <Form.Group controlId="formGroupIdEngenheiro">
+                        <Form.Label>Id Engenheiro</Form.Label>
+                        <Form.Control
+                            type="idEngenheiro"
+                            onChange={e => setIdEngenheiro(e.target.value)}
+                            placeholder="Id Engenheiro" />
+                    </Form.Group>                 
                     <Button type="submit" className="btn-salvar">Salvar</Button>
                 </Form>
             </Modal.Body>

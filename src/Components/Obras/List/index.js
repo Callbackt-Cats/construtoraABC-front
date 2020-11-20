@@ -105,11 +105,11 @@ export default function List(props) {
     }
 
     const itens = listagem.map((item) =>
-        <ListGroup.Item key={item.id} className="item-list-colaboradores">
+        <ListGroup.Item key={item.codigo} className="item-list-colaboradores">
             <span className="item-name"> {item.endereco}  </span>
             <span className="item-name"> {item.descricao} </span>
             <span className="item-edit"><FiEdit onClick={() => EditarObra(item)} /></span>
-            <span className="item-delete"><FiXCircle onClick={() => DeletarObras(item.id)} /></span>
+            <span className="item-delete"><FiXCircle onClick={() => DeletarObras(item.codigo)} /></span>
         </ListGroup.Item>
     );
 
@@ -137,12 +137,12 @@ export default function List(props) {
                 centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Remover cliente  <strong className="id-produto">{codigo}</strong>
+                        Remover obra  <strong className="id-produto">{codigo}</strong>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>
-                        Você tem certeza que gostaria de excluir esse colaborador?
+                        Você tem certeza que gostaria de excluir essa Obra?
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
@@ -184,7 +184,6 @@ export default function List(props) {
                         <Form.Control
                             type="descricao"
                             value={descricao}
-                            disabled={true}
                             onChange={e => setDescricao(e.target.value)}
                             placeholder="Descrição" />
                     </Form.Group> 
