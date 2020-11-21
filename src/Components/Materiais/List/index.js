@@ -81,7 +81,7 @@ export default function List(props) {
     async function handleDeleteRegister() {
         setLoader(true);
         try {
-          const response = await Delete('/Obras/', codigo);    
+          const response = await Delete('/Materiais/', codigo);    
           if (response) {
                 alert('Registros excluídos com sucesso');
                 setLoader(false); 

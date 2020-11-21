@@ -37,7 +37,7 @@ export default function ModalInsert(props) {
     return (
         <div>
         <Button variant="info" size="lg" block onClick={() => handleShow(true)}>
-            <FiUser /> Inserir novo colaboradores
+            <FiUser /> Inserir novo colaborador
         </Button>
         <Modal
             {...props}

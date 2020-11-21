@@ -13,27 +13,23 @@ export default function ModalInsert(props) {
     const handleShow = () => setShow(true);
 
       // Propriedades obras
+      const [id, setId] = useState();
+      const [nome, setNome] = useState();
       const [codigo, setCodigo] = useState();
-      const [endereco, setEndereco] = useState();
-      const [localizacao, setLocalizacao] = useState();
-      const [descricao, setDescricao] = useState();
-      const [valor, setValor] = useState();
-      const [idImovel, setIdImovel] = useState();
-      const [idEngenheiro, setIdEngenheiro] = useState();
+      const [idFornecedor, setIdFornecedor] = useState();
+      const [idResponsavel, setIdResponsavel] = useState();
 
     async function handleRegister(e) {
         e.preventDefault();
 
         const data = {
+            id,
+            nome,
             codigo,
-            endereco,
-            localizacao,
-            descricao,
-            valor,
-            idImovel,
-            idEngenheiro
+            idFornecedor,
+            idResponsavel
         }
-        const response = await insert('/Obras', data);
+        const response = await insert('/materiais', data);
         if (response) {
             handleClose()
         }else{
@@ -44,7 +40,7 @@ export default function ModalInsert(props) {
     return (
         <div>
         <Button variant="info" size="lg" block onClick={() => handleShow(true)}>
-            <FiUser /> Inserir novo colaboradores
+            <FiUser /> Inserir novo material
         </Button>
         <Modal
             {...props}
@@ -55,53 +51,39 @@ export default function ModalInsert(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Cadastrar novo Colaborador
+                    Cadastrar novo Materiais
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form onSubmit={handleRegister}>
                     <Form.Group controlId="formGroupEndereco">
-                        <Form.Label>Endereço</Form.Label>
+                        <Form.Label>Nome</Form.Label>
                         <Form.Control
-                            type="endereco"
-                            onChange={e => setEndereco(e.target.value)}
-                            placeholder="Endereço" />
+                            type="nome"
+                            onChange={e => setNome(e.target.value)}
+                            placeholder="Nome" />
                     </Form.Group>
                     <Form.Group controlId="formGroupLocalizacao">
-                        <Form.Label>Localização</Form.Label>
+                        <Form.Label>Código</Form.Label>
                         <Form.Control
-                            type="localizacao"
-                            onChange={e => setLocalizacao(e.target.value)}
-                            placeholder="Localização" />
+                            type="codigo"
+                            onChange={e => setCodigo(e.target.value)}
+                            placeholder="Código" />
                     </Form.Group>
                     <Form.Group controlId="formGroupDescricao">
-                        <Form.Label>Descrição</Form.Label>
+                        <Form.Label>Id Fornecedor</Form.Label>
                         <Form.Control
-                            type="descricao"
-                            onChange={e => setDescricao(e.target.value)}
-                            placeholder="Descrição" />
+                            type="idFornecedor"
+                            onChange={e => setIdFornecedor(e.target.value)}
+                            placeholder="Id Fornecedor" />
                     </Form.Group> 
                     <Form.Group controlId="formGroupCpf">
-                        <Form.Label>Valor</Form.Label>
+                        <Form.Label>Id Responsável</Form.Label>
                         <Form.Control
-                            type="valor"
-                            onChange={e => setValor(e.target.value)}
-                            placeholder="Valor" />
-                    </Form.Group>
-                    <Form.Group controlId="formGroupIdImovel">
-                        <Form.Label>Id Imóvel</Form.Label>
-                        <Form.Control
-                            type="IdImovel"
-                            onChange={e => setIdImovel(e.target.value)}
-                            placeholder="Id Imóvel" />
-                    </Form.Group>   
-                    <Form.Group controlId="formGroupIdEngenheiro">
-                        <Form.Label>Id Engenheiro</Form.Label>
-                        <Form.Control
-                            type="idEngenheiro"
-                            onChange={e => setIdEngenheiro(e.target.value)}
-                            placeholder="Id Engenheiro" />
-                    </Form.Group>                 
+                            type="Id Responsável"
+                            onChange={e => setIdResponsavel(e.target.value)}
+                            placeholder="Id Responsável" />
+                    </Form.Group>        
                     <Button type="submit" className="btn-salvar">Salvar</Button>
                 </Form>
             </Modal.Body>

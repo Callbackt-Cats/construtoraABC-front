@@ -2,7 +2,7 @@
     width: 100%;
     height: 80px;
     margin-bottom: 20px;
-    background-color:#3c3939;
+    background-color:#000820;
 }
 @media only screen and (max-width: 500px) { 
     .header {
