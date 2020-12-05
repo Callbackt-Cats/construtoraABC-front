@@ -51,7 +51,7 @@ export default function ModalInsert(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Cadastrar novo Materiais
+                    Cadastrar novo Material
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>

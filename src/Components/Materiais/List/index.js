@@ -131,7 +131,7 @@ export default function List(props) {
                 centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Remover obra  <strong className="id-produto">{codigo}</strong>
+                        Remover material  <strong className="id-produto">{codigo}</strong>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -152,7 +152,7 @@ export default function List(props) {
             aria-labelledby="contained-modal-title-vcenter">
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Editar Obra <strong>{codigo}</strong>
+                    Editar material <strong>{codigo}</strong>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
