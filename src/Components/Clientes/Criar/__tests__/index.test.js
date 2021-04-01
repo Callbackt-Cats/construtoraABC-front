@@ -5,11 +5,14 @@ import { fireEvent, render, waitForElement, screen } from '@testing-library/reac
 import Create from '../index.js'
 
 describe('Test for create Component', () => {
-    //redenrizar o componente button
     it('Should add new task quen form has been submitted', () => {
-        const {getByTestId} = render(<Create/>)
-        
-        const input = screen.getByTestId('form-inserir');
+        const {getByTestId} = render(<Create/>) //Renderiza 
+
+       fireEvent.click(getByTestId('button-inserir')) //Busca pelo Button
+
+
+        //------TESTES INCOMPLETOS FEITOS POR MYLLENE-----
+        /*const input = screen.getByTestId('form-inserir');
         const input2 = screen.getByTestId('form-email');
         const input3 = screen.getByTestId('form-cpf');
 
@@ -22,17 +25,17 @@ describe('Test for create Component', () => {
         
         fireEvent.click(getByTestId('button-inserir'))
         
-        
-        
-        /*
+        -------------
+
         const message = getByTestId('form-inserir');
 
         fireEvent.change(message, {targe: {value: 'Name Client'}});
 
-        fireEvent.click(getByTestId('button-inserir'))
-
         fireEvent.chance(message, {target: {value: "Hello"}});
 
-        expect(message.value).toBe('Hello')*/
+        expect(message.value).toBe('Hello')
+        
+        */
+
     })
 })
