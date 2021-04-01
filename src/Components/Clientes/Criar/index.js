@@ -33,7 +33,7 @@ export default function ModalInsert(props) {
 
     return (
         <div>
-            <Button variant="info" size="lg" block onClick={() => handleShow(true)}>
+            <Button data-testid="button-inserir" variant="info" size="lg" block onClick={() => handleShow(true)}>
                 <FiBox /> Inserir novo cliente
             </Button>
             <Modal
@@ -53,6 +53,7 @@ export default function ModalInsert(props) {
                         <Form.Group controlId="formGroupNome">
                             <Form.Label>Nome</Form.Label>
                             <Form.Control
+                                data-testid="form-inserir"
                                 type="Nome"
                                 onChange={e => setNome(e.target.value)}
                                 placeholder="Nome" />
@@ -60,6 +61,7 @@ export default function ModalInsert(props) {
                         <Form.Group controlId="formGroupEmail">
                             <Form.Label>E-mail</Form.Label>
                             <Form.Control
+                                data-testid="form-email"
                                 type="Email"
                                 onChange={e => setEmail(e.target.value)}
                                 placeholder="E-mail" />
@@ -67,6 +69,7 @@ export default function ModalInsert(props) {
                         <Form.Group controlId="formGroupCidade">
                             <Form.Label>Cpf</Form.Label>
                             <Form.Control
+                                data-testid="form-cpf"
                                 type="cpf"
                                 onChange={e => setcpf(e.target.value)}
                                 placeholder="cpf" />
