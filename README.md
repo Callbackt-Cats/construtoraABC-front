@@ -15,7 +15,7 @@ O Front End da aplicação tem o papel de Cliente na arquitetura Cliente/Servido
   
   A escolha deste processo se deu por se adequar a realidade da equipe do projeto e ao prazo estabelecido de entrega do software. Visando primeiramente estabelecer detalhadamente as atividades e os prazos, e trabalhar em cima destes, almejando uma melhor completude do software e melhor aproveitamento do tempo e recursos da equipe disponível.
 
-## Levantamento de Requisitos 
+## Levantamento de Requisitos ✔️ 
   Para o levantamento de requisitos a escolha abordada foi a análise dos diagramas de caso de uso. Visualizou-se que o ator que interage com o sistema é o Administrador, representado pelo dono da Construtora ou algum colaborador com acesso.  Os serviços principais (ou macro-funcionalidades) são:  
   * **Gerenciamento de Clientes:** visualizar, criar, apagar e atualizar;
   * **Gerenciamento de Imóveis:** visualizar, criar, apagar e atualizar;
