@@ -22,3 +22,16 @@ O Front End da aplicação tem o papel de Cliente na arquitetura Cliente/Servido
   * **Gerenciamento de Materiais:** visualizar, criar, apagar e atualizar;
   * **Gerenciamento de Colaboradores:** visualizar, criar, apagar e atualizar;
   * **Gerenciamento de Obras:** visualizar, criar, apagar e atualizar.
+  
+  
+## Especificação de Requisitos 📇
+  ### Requisitos Funcionais
+   Os requisitos funcionais do projeto são enumerados abaixo. Cada um contém um rótulo, descrição, informações e regras.
+   * **RF01:** o sistema deve permitir o cadastro, atualização, busca e exclusão de clientes. Informações: Nome, e-mail e CPF. Regras: Todas as informações sobre cliente devem ser obrigatoriamente fornecidas.
+   * **RF02:** o sistema deve permitir o cadastro, atualização, busca e exclusão decolaboradores. Informações: nome, e-mail e CPF. Regras: Todas as informações sobre colaboradores devem ser obrigatoriamente fornecidas.
+   * **RF03:** o sistema deve permitir o cadastro, atualização, busca e exclusão de imóveis. Informações: Endereço, identificação do cliente e descrição. Regras:   Todas  as  informações  sobre  imóvel  devem  ser obrigatoriamente fornecidas.
+   * **RF04:** o sistema deve permitir o cadastro, atualização, busca e exclusão de materiais. Informações:  Nome, código, identificação do fornecedor e  identificação do responsável. Regras: Todas  as  informações sobre cliente devem ser obrigatoriamente fornecidas.
+   * **RF05:** o sistema deve permitir o cadastro, atualização, busca e exclusão de obras. Informações: Endereço, localização, descrição, valor e identificação do imóvel. Regras: Todas as informações sobre cliente devem ser obrigatoriamente fornecidas.
+
+
+ 
